@@ -1,14 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react'
-import React from 'react'
-import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Prikaz from './components/Prikaz';
 import Admin from './components/Admin';
 
 function App() {
-
   const [ispiti, setIspiti] = useState([])
 
   const obrisi = (ispit) => {
@@ -24,17 +21,17 @@ function App() {
   return (
     <BrowserRouter>
 
-    <Switch>
-      <Route path='/admin'>
-        <Admin ispiti={ispiti} onObrisi={obrisi} onDodaj={dodaj} />
-      </Route>
-      <Route path='/'>
-        <Prikaz ispiti={ispiti} />
-      </Route>
-    </Switch>
+      <Switch>
+        <Route path='/admin'>
+          <Admin ispiti={ispiti} onObrisi={obrisi} onDodaj={dodaj} />
+        </Route>
+        <Route path='/'>
+          <Prikaz ispiti={ispiti} />
+        </Route>
+      </Switch>
 
-  </BrowserRouter>
-);
+    </BrowserRouter>
+  );
 }
 
 export default App;
